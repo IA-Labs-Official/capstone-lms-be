@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tocs",
+  "info": {
+    "singularName": "toc",
+    "pluralName": "tocs",
+    "displayName": "toc",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "modules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::module.module"
+    },
+    "trainings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::training.training",
+      "mappedBy": "toc"
+    }
+  }
+}

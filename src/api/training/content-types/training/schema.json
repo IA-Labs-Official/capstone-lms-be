@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainings",
+  "info": {
+    "singularName": "training",
+    "pluralName": "trainings",
+    "displayName": "Training",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organization.organization",
+      "inversedBy": "trainings"
+    },
+    "learners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "training"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "toc": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::toc.toc",
+      "inversedBy": "trainings"
+    }
+  }
+}
